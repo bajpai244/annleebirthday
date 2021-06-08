@@ -13,6 +13,7 @@ const Component = ({ img_url, text }) => {
         my: [4],
         px: [3],
         py: [1],
+        mx: [3, 2],
         transition: "0.5s",
         position: "relative",
         ":hover": {
