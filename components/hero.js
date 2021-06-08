@@ -1,40 +1,47 @@
 /*@jsxImportSource theme-ui*/
 
-import { Container } from "theme-ui";
+import { Box, Container } from "theme-ui";
 
 const Component = () => {
   return (
-    <Container
-      variant="wide"
+    <Box
       sx={{
         bg: "purple",
         color: "white",
         pt: [4],
-        pb: [2],
+        pb: [4],
         textAlign: "center",
-        maxHeight: 220,
+        height: [250, 200],
+        position: "relative",
       }}
     >
-      <h1 sx={{ my: [0], fontSize: [5] }}>Happy Birthday Annlee 🎉</h1>
+      <h1 sx={{ my: [0], fontSize: [4, 4, 5] }}>Happy Birthday Annlee 🎉</h1>
       <p sx={{ fontSize: [1], mt: [1] }}>
         A very very Happy Birthday to the superhuman of Hack Club APAC!
       </p>
-      <img
-        src="./annlee.jpeg"
+      <div
         sx={{
-          borderRadius: "circle",
-          width: [125],
-          position: "relative",
-          bottom: "-50%",
-          cursor: "pointer",
-          transition: "1s",
-          ":hover": {
-            transform: "rotate(360deg)",
-            transition: "2s",
-          },
+          height: [40],
+          width: "100vw",
+          textAlign: "center",
         }}
-      />
-    </Container>
+      >
+        <img
+          src="./annlee.jpeg"
+          sx={{
+            borderRadius: "circle",
+            width: [100, 100, 110, 125],
+            mx: "auto",
+            cursor: "pointer",
+            transition: "1s",
+            ":hover": {
+              transform: "rotate(360deg)",
+              transition: "2s",
+            },
+          }}
+        />
+      </div>
+    </Box>
   );
 };
 
