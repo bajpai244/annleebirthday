@@ -9,7 +9,7 @@ const Page = () => {
   const [play] = useSound("./music.mp3");
 
   useEffect(() => {
-    //  play();
+    play();
   });
 
   return (
