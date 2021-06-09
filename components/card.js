@@ -3,7 +3,7 @@
 import { Box, Flex } from "theme-ui";
 import ReactPlayer from "react-player";
 
-const Component = ({ img_url, text, video_url = undefined }) => {
+const Component = ({ img_url, text, video_url = undefined, name }) => {
   return (
     <Box
       sx={{
@@ -49,6 +49,8 @@ const Component = ({ img_url, text, video_url = undefined }) => {
       ) : (
         <p sx={{ fontSize: [1], mb: [3] }}>{text}</p>
       )}
+
+      {name ? <p sx={{ fontSize: [1], mb: [3] }}>- {name}</p> : null}
     </Box>
   );
 };
