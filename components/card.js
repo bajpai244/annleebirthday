@@ -1,8 +1,9 @@
 /**@jsxImportSource theme-ui */
 
 import { Box, Flex } from "theme-ui";
+import ReactPlayer from "react-player";
 
-const Component = ({ img_url, text }) => {
+const Component = ({ img_url, text, video_url = undefined }) => {
   return (
     <Box
       sx={{
@@ -12,8 +13,8 @@ const Component = ({ img_url, text }) => {
         borderColor: "purple",
         my: [4],
         px: [3],
-        py: [1],
-        mx: [2],
+        py: video_url ? [3] : [1],
+        mx: [3, 2],
         transition: "0.5s",
         position: "relative",
         ":hover": {
@@ -36,7 +37,18 @@ const Component = ({ img_url, text }) => {
         },
       }}
     >
-      <p sx={{ fontSize: [1], mb: [3] }}>{text}</p>
+      {video_url ? (
+        <video
+          sx={{ width: "100%", height: "100%", borderRadius: [10] }}
+          controls
+          poster={"video_cgc_poster.png"}
+        >
+          <source src="video_cgc.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <p sx={{ fontSize: [1], mb: [3] }}>{text}</p>
+      )}
     </Box>
   );
 };

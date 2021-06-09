@@ -21,8 +21,8 @@ const Component = () => (
       className="masonry-posts"
       columnClassName="masonry-posts-column"
     >
-      {data.map(({ img, text }) => (
-        <Card key={img} img_url={img} text={text} />
+      {data.map(({ img, text, video_url }) => (
+        <Card key={img} img_url={img} text={text} video_url={video_url} />
       ))}
     </Masonry>
     ,
