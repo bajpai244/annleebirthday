@@ -25,7 +25,7 @@ const Component = ({
         transition: "0.5s",
         position: "relative",
         ":hover": {
-          transform: "rotate(-5deg) scale(1.1)",
+          transform: [null, "rotate(-5deg) scale(1.1)"],
           transition: "0.5s",
         },
         ":after": {
