@@ -3,7 +3,14 @@
 import { Box, Flex } from "theme-ui";
 import ReactPlayer from "react-player";
 
-const Component = ({ img_url, text, video_url = undefined, name }) => {
+const Component = ({
+  img_url,
+  text,
+  video_url = undefined,
+  name,
+  video_poster,
+  poster_img_url,
+}) => {
   return (
     <Box
       sx={{
@@ -41,7 +48,7 @@ const Component = ({ img_url, text, video_url = undefined, name }) => {
         <video
           sx={{ width: "100%", height: "100%", borderRadius: [10] }}
           controls
-          poster={"video_cgc_poster.png"}
+          poster={video_poster}
         >
           <source src="video_cgc.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -49,6 +56,13 @@ const Component = ({ img_url, text, video_url = undefined, name }) => {
       ) : (
         <p sx={{ fontSize: [1], mb: [3] }}>{text}</p>
       )}
+
+      {poster_img_url ? (
+        <img
+          src={poster_img_url}
+          sx={{ width: "100%", height: "100%", borderRadius: [10] }}
+        />
+      ) : null}
 
       {name ? <p sx={{ fontSize: [1], mb: [3] }}>- {name}</p> : null}
     </Box>

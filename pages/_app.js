@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+
 import { ThemeProvider } from "theme-ui";
 import Head from "next/head";
 
